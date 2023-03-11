@@ -29,7 +29,7 @@ if (!defined('_PS_VERSION_'))
 
 class SocialSharing extends Module
 {
-	protected static $networks = array('Facebook', 'Twitter', 'Google', 'Pinterest');
+	protected static $networks = array('Facebook', 'Twitter', 'WhatsApp', 'Pinterest');
 	protected $html = '';
 
 	public function __construct()
@@ -45,7 +45,7 @@ class SocialSharing extends Module
 		parent::__construct();
 
 		$this->displayName = $this->l('Social sharing');
-		$this->description = $this->l('Displays social sharing buttons (Twitter, Facebook, Google+ and Pinterest) on every product page.');
+		$this->description = $this->l('Displays social sharing buttons (Twitter, Facebook, WhatsApp and Pinterest) on every product page.');
 		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => '1.6.99.99');
 	}
 
@@ -57,7 +57,7 @@ class SocialSharing extends Module
 		// Activate every option by default
 		Configuration::updateValue('PS_SC_TWITTER', 1);
 		Configuration::updateValue('PS_SC_FACEBOOK', 1);
-		Configuration::updateValue('PS_SC_GOOGLE', 1);
+		Configuration::updateValue('PS_SC_WHATSAPP', 1);
 		Configuration::updateValue('PS_SC_PINTEREST', 1);
 
 		// The module will add a meta in the product page header and add a javascript file
@@ -214,7 +214,7 @@ class SocialSharing extends Module
 			$this->context->smarty->assign(array(
 				'product' => isset($product) ? $product : '',
 				'PS_SC_TWITTER' => Configuration::get('PS_SC_TWITTER'),
-				'PS_SC_GOOGLE' => Configuration::get('PS_SC_GOOGLE'),
+				'PS_SC_WHATSAPP' => Configuration::get('PS_SC_WHATSAPP'),
 				'PS_SC_FACEBOOK' => Configuration::get('PS_SC_FACEBOOK'),
 				'PS_SC_PINTEREST' => Configuration::get('PS_SC_PINTEREST')
 			));
@@ -242,7 +242,7 @@ class SocialSharing extends Module
 		{
 			$this->context->smarty->assign(array(
 				'PS_SC_TWITTER' => Configuration::get('PS_SC_TWITTER'),
-				'PS_SC_GOOGLE' => Configuration::get('PS_SC_GOOGLE'),
+				'PS_SC_WHATSAPP' => Configuration::get('PS_SC_WHATSAPP'),
 				'PS_SC_FACEBOOK' => Configuration::get('PS_SC_FACEBOOK'),
 				'PS_SC_PINTEREST' => Configuration::get('PS_SC_PINTEREST')
 			));
