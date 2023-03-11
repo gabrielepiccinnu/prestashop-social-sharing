@@ -36,8 +36,8 @@ $(document).ready(function(){
 				case 'facebook':
 					window.open('http://www.facebook.com/sharer.php?u=' + sharing_url, 'sharer', 'toolbar=0,status=0,width=660,height=445');
 					break;
-				case 'google-plus':
-					window.open('https://plus.google.com/share?url=' + sharing_url, 'sharer', 'toolbar=0,status=0,width=660,height=445');
+				case 'whatsapp':
+					window.open('https://api.whatsapp.com/send?text='  + sharing_name + ' ' + encodeURIComponent(sharing_url), 'data-action', 'share/whatsapp/share');
 					break;
 				case 'pinterest':
 					var img_url = sharing_img;
